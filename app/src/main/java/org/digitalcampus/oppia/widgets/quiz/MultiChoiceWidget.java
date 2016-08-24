@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import org.digitalcampus.mobile.learning.R;
+import org.bright.future.oppia.mobile.learning.R;
 import org.digitalcampus.mobile.quiz.model.Response;
 import org.digitalcampus.oppia.activity.PrefsActivity;
 

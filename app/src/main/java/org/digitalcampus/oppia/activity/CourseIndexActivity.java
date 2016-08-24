@@ -22,7 +22,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
-import org.digitalcampus.mobile.learning.R;
+import org.bright.future.oppia.mobile.learning.R;
 import org.digitalcampus.oppia.adapter.SectionListAdapter;
 import org.digitalcampus.oppia.exception.InvalidXMLException;
 import org.digitalcampus.oppia.model.Activity;
@@ -120,7 +120,7 @@ public class CourseIndexActivity extends AppActivity implements OnSharedPreferen
 		// set image
 		if (course.getImageFile() != null) {
 			BitmapDrawable bm = ImageUtils.LoadBMPsdcard(course.getImageFileFromRoot(), this.getResources(),
-					R.drawable.dc_logo);
+					R.drawable.bright_future_logo);
 			//getSupportActionBar().setIcon(bm);
             getSupportActionBar().setHomeAsUpIndicator(bm);
         }

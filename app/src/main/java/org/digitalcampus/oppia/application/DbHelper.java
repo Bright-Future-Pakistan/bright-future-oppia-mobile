@@ -55,7 +55,7 @@ import com.splunk.mint.Mint;
 public class DbHelper extends SQLiteOpenHelper {
 
 	static final String TAG = DbHelper.class.getSimpleName();
-	static final String DB_NAME = "mobilelearning.db";
+	static final String DB_NAME = "bright-future.db";
 	static final int DB_VERSION = 25;
 
     private static DbHelper instance;
@@ -400,13 +400,11 @@ public class DbHelper extends SQLiteOpenHelper {
 			db.execSQL(sql2);
 		}
 
-        if(oldVersion <= 22 && newVersion >= 23){
-            // add user preferences table
-            db.execSQL("drop table if exists " + USER_PREFS_TABLE);
-            createUserPrefsTable(db);
-        }
-
         if(oldVersion <= 23 && newVersion >= 24){
+			// add user preferences table
+			db.execSQL("drop table if exists " + USER_PREFS_TABLE);
+			createUserPrefsTable(db);
+
             // add field "sequencingMode" to Course table
             String sql1 = "ALTER TABLE " + COURSE_TABLE + " ADD COLUMN " + COURSE_C_SEQUENCING + " text default '"+Course.SEQUENCING_MODE_NONE+"';";
             db.execSQL(sql1);

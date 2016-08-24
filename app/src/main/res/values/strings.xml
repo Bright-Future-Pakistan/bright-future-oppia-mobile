@@ -25,11 +25,11 @@
     <string name="menu_search">Search</string>
     <string name="menu_stop_read_aloud">Stop reading</string>
     
-    <string name="service_tracker">OppiaMobile Tracker Service</string>
+    <string name="service_tracker">Bright Future Tracker Service</string>
     
-    <string name="fragment_welcome_title">Welcome to OppiaMobile</string>
-    <string name="fragment_welcome_desc">OppiaMobile is a mobile learning platform for delivering learning content, video and quizzes.\n\n\'Oppia\' means \'to learn\' in Finnish</string>
-    <string name="fragment_welcome_login_info">To get started with OppiaMobile, you will need to register or login.</string>
+    <string name="fragment_welcome_title">Welcome to Bright Future</string>
+    <string name="fragment_welcome_desc">Bright Future is a mobile learning platform for delivering learning content, video and quizzes.</string>
+    <string name="fragment_welcome_login_info">To get started with Bright Future, you will need to register or login.</string>
     <string name="fragment_welcome_privacy">We take your privacy seriously, <a href="http://digital-campus.org/privacy/">find out more about Digital Campus\'s privacy policy</a></string>
     
     <string name="tab_title_about">About</string>
@@ -57,7 +57,7 @@
     <string name="title_prefs">Settings</string>
     <string name="title_scorecard">Scorecard</string>
     <string name="title_tag_select_activity">Select Category</string>
-    <string name="title_welcome">OppiaMobile</string>
+    <string name="title_welcome">Bright Future</string>
     <string name="version">Version: %1$s</string>
     <string name="title_download_media">Download Media</string>
     
@@ -212,12 +212,12 @@
 	<string name="scan_media_download_via_pc_button">Download via PC</string>
 	<string name="success_media_download">Media file: \'%1$s\' successfully downloaded.</string>
 	<string name="media_file_size">%1$.1fMb</string>
-    <string name="notification_media_title">OppiaMobile: media management</string>
+    <string name="notification_media_title">Bright Future: media management</string>
     <string name="notification_media_subject">All media files downloaded successfully</string>
 	
 	<string name="error_connection">Error connecting to server. Please check you have an active internet connection and try again.</string>
 	<string name="error_connection_required">You need an active internet connection to access this page. Please turn on wifi or mobile internet connection and try again.</string>
-    <string name="error_connection_ssl">Error connecting to server due to SSL problems. Please, ensure that the host in your OppiaMobile server setting is correct, and that your device has the right time/date</string>
+    <string name="error_connection_ssl">Error connecting to server due to SSL problems. Please, ensure that the host in your Bright Future server setting is correct, and that your device has the right time/date</string>
 	<string name="error_installing_course">%1$s: failed to install</string>
 	<string name="error_latest_already_installed">%1$s: latest version already installed</string>
 	<string name="error_login">Invalid username/password\nPlease try again</string>
@@ -282,7 +282,7 @@
     <string name="search.message.fetching">"Fetching results…"</string>
 	<string name="submit_stats_btn_text">Send now</string>
 	
-	<string name="media_player_description">Oppia Media Player</string>
+	<string name="media_player_description">Bright Future Media Player</string>
 	
 	<string name="upgradev49_1">Copying files to new location - this may take several minutes, so please be patient</string>
     <string name="loading_course">Loading course…</string>
@@ -301,7 +301,7 @@
     <string name="prefAdminPassword">Change admin password</string>
     <string name="prefRemoteAdminEnabled">Enable remote administration of the device</string>
 
-    <string name="notification.remote_admin.title">Oppia Remote Administration</string>
+    <string name="notification.remote_admin.title">Bright Future Remote Administration</string>
     <string name="notification.remote_admin.camera_disabled">The device cameras have been disabled remotely</string>
     <string name="notification.remote_admin.camera_enabled">The device cameras have been enabled remotely</string>
 
@@ -309,13 +309,13 @@
     <string name="sequencing.section.message">You must complete the previous activities in this section before this one becomes available to you.</string>
     <string name="sequencing.course.message">You must complete all the previous activities in the course before this one becomes available to you.</string>
     <string name="empty_state_courses">There aren\'t any courses currently available to you on this server.</string>
-    <string name="permissions.title">OppiaMobile needs the following permissions to function properly:</string>
+    <string name="permissions.title">Bright Future needs the following permissions to function properly:</string>
     <string name="permissions.storage.title">read and modify contents of the SD card</string>
-    <string name="permissions.storage.description">OppiaMobile needs access to the SD card to be able to store the downloaded media contents for the courses</string>
+    <string name="permissions.storage.description">Bright Future needs access to the SD card to be able to store the downloaded media contents for the courses</string>
     <string name="permissions.phone_state.title">read phone state and identity</string>
-    <string name="permissions.phone_state.description">Explanation of why OppiaMobile needs the phone identity</string>
+    <string name="permissions.phone_state.description">Explanation of why Bright Future needs the phone identity</string>
     <string name="permissions.allow_btn_text">Allow permissions</string>
-    <string name="permissions.not_askable.message">The app does not have the permissions needed to run. Please, go to Settings \> Apps \> OppiaMobile > Permissions to grant access to these permissions</string>
+    <string name="permissions.not_askable.message">The app does not have the permissions needed to run. Please, go to Settings \> Apps \> Bright Future > Permissions to grant access to these permissions</string>
     <string name="permissions.not_askable.info">You see this message because permissions were prompted before and you denied them and checked \"Don\'t ask again\"</string>
     <string name="error_apikey_expired">Your API key expired. Please, log in again.</string>
 

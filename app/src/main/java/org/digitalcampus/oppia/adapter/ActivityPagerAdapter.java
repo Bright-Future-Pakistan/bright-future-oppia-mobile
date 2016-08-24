@@ -27,7 +27,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import org.digitalcampus.mobile.learning.R;
+import org.bright.future.oppia.mobile.learning.R;
 
 public class ActivityPagerAdapter extends FragmentStatePagerAdapter {
 

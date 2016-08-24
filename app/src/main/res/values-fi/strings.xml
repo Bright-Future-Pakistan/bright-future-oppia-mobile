@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OppiaMobile</string>
+    <string name="app_name">Bright Future</string>
     <string name="app_logo_alt">Digital Campus Logo</string>
     
     <string name="about_logged_in">Logged in as: %1$s</string>
@@ -21,11 +21,11 @@
     <string name="menu_search">Search</string>
     <string name="menu_stop_read_aloud">Stop reading</string>
     
-    <string name="service_tracker">OppiaMobile Tracker Service</string>
+    <string name="service_tracker">Bright Future Tracker Service</string>
     
-    <string name="fragment_welcome_title">Welcome to OppiaMobile</string>
-    <string name="fragment_welcome_desc">OppiaMobile is a mobile learning platform for delivering learning content, video and quizzes.\n\n\'Oppia\' means \'to learn\' in Finnish</string>
-    <string name="fragment_welcome_login_info">To get started with OppiaMobile, you will need to register or login.</string>
+    <string name="fragment_welcome_title">Welcome to Bright Future</string>
+    <string name="fragment_welcome_desc">Bright Future is a mobile learning platform for delivering learning content, video and quizzes.</string>
+    <string name="fragment_welcome_login_info">To get started with Bright Future, you will need to register or login.</string>
     <string name="fragment_welcome_privacy">We take your privacy seriously, <a href="http://digital-campus.org/privacy/">find out more about Digital Campus\'s privacy policy</a></string>
     
     <string name="tab_title_about">About</string>
@@ -54,7 +54,7 @@
     <string name="title_scorecard">Scorecard</string>
     <string name="search.activity_title">Search</string>
     <string name="title_tag_select_activity">Select Category</string>
-    <string name="title_welcome">OppiaMobile</string>
+    <string name="title_welcome">Bright Future</string>
     <string name="version">Version: %1$s</string>
     <string name="title_download_media">Download Media</string>
     
@@ -250,7 +250,7 @@
 	<string name="search.message.no_results">No results found for \"%1$s\"</string>
 	<string name="submit_stats_btn_text">Send now</string>
 	
-	<string name="media_player_description">Oppia Media Player</string>
+	<string name="media_player_description">Bright Future Media Player</string>
 	
 	<string name="upgradev49_1">Copying files to new location - this may take several minutes, so please be patient</string>
 </resources>

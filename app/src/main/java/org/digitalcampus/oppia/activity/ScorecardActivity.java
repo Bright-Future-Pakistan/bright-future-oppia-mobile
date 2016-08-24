@@ -20,7 +20,7 @@ package org.digitalcampus.oppia.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.digitalcampus.mobile.learning.R;
+import org.bright.future.oppia.mobile.learning.R;
 import org.digitalcampus.oppia.adapter.ActivityPagerAdapter;
 import org.digitalcampus.oppia.fragments.BadgesFragment;
 import org.digitalcampus.oppia.fragments.GlobalScorecardFragment;
@@ -93,7 +93,7 @@ public class ScorecardActivity extends AppActivity {
 		if(this.course != null){
 			fScorecard = CourseScorecardFragment.newInstance(course);
             if (course.getImageFile() != null) {
-                BitmapDrawable bm = ImageUtils.LoadBMPsdcard(course.getImageFileFromRoot(), this.getResources(), R.drawable.dc_logo);
+                BitmapDrawable bm = ImageUtils.LoadBMPsdcard(course.getImageFileFromRoot(), this.getResources(), R.drawable.bright_future_logo);
                 //actionBar.setIcon(bm);
                 actionBar.setHomeAsUpIndicator(bm);
             }

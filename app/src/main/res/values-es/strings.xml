@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OppiaMobile</string>
+    <string name="app_name">Bright Future</string>
     <string name="app_logo_alt">Digital Campus Logo</string>
     
     <string name="menu_download">Gestionar cursos</string>
@@ -15,11 +15,11 @@
     <string name="menu_search">Búsqueda</string>
     <string name="menu_stop_read_aloud">Stop reading</string>
     
-    <string name="service_tracker">OppiaMobile buscador de servicio</string>
+    <string name="service_tracker">Bright Future buscador de servicio</string>
     
-    <string name="fragment_welcome_title">Welcome to OppiaMobile</string>
-    <string name="fragment_welcome_desc">OppiaMobile is a mobile learning platform for delivering learning content, video and quizzes.\n\n\'Oppia\' means \'to learn\' in Finnish</string>
-    <string name="fragment_welcome_login_info">To get started with OppiaMobile, you will need to register or login.</string>
+    <string name="fragment_welcome_title">Welcome to Bright Future</string>
+    <string name="fragment_welcome_desc">Bright Future is a mobile learning platform for delivering learning content, video and quizzes.</string>
+    <string name="fragment_welcome_login_info">To get started with Bright Future, you will need to register or login.</string>
     <string name="fragment_welcome_privacy">We take your privacy seriously, <a href="http://digital-campus.org/privacy/">find out more about Digital Campus\'s privacy policy</a></string>
     
     <string name="tab_title_about">Acerca de</string>
@@ -45,7 +45,7 @@
     <string name="title_course_meta">Acerca de</string>
     <string name="title_scorecard">Scorecard</string>
     <string name="search.activity_title">Búsqueda</string>
-    <string name="title_welcome">OppiaMobile</string>
+    <string name="title_welcome">Bright Future</string>
         
     <string name="widget_feedback_submit">Submit</string>
     <string name="widget_feedback_submit_title">Thank you for submitting your feedback.</string>
@@ -173,7 +173,7 @@
 	<string name="scan_media_download_via_pc_button">Descarga vía PC</string>
 	<string name="success_media_download">Media file: \'%1$s\' descargado correctamente.</string>
 	<string name="media_file_size">%1$.1fMb</string>
-    <string name="notification_media_title">OppiaMobile: gestión de descargas</string>
+    <string name="notification_media_title">Bright Future: gestión de descargas</string>
     <string name="notification_media_subject">Todos los ficheros multimedia fueron descargados correctamente</string>
 	
 	<string name="error_connection">Error conectando al servidor</string>

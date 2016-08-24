@@ -57,12 +57,12 @@
     </style>
 
     <style name="ActionBar.Solid.Om" parent="android:Widget.Holo.ActionBar.Solid">
-        <item name="android:background">@drawable/actionbar_background_gradient</item>
+        <item name="android:background">@drawable/background_gradient</item>
         <item name="android:backgroundStacked">@drawable/ab_stacked_solid_om</item>
         <item name="android:backgroundSplit">@drawable/ab_stacked_solid_om</item>
         <item name="android:progressBarStyle">@style/ProgressBar.Om</item>
         <item name="android:titleTextStyle">@style/Oppia.ActionBar.TitleTextStyle</item>
-        <item name="background">@drawable/actionbar_background_gradient</item>
+        <item name="background">@drawable/background_gradient</item>
         <item name="backgroundStacked">@drawable/ab_stacked_solid_om</item>
         <item name="backgroundSplit">@drawable/ab_stacked_solid_om</item>
         <item name="progressBarStyle">@style/ProgressBar.Om</item>
@@ -144,8 +144,8 @@
     </style>
 
     <style name="Oppia.ToolbarTheme.Toolbar" parent="Widget.AppCompat.Toolbar">
-        <item name="android:background">@drawable/actionbar_background_gradient</item>
-        <item name="background">@drawable/actionbar_background_gradient</item>
+        <item name="android:background">@drawable/background_gradient</item>
+        <item name="background">@drawable/background_gradient</item>
     </style>
 
     <style name="Oppia.ToolbarTheme.AppTabLayout" parent="Widget.Design.TabLayout">

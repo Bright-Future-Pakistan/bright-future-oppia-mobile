@@ -27,7 +27,12 @@ public class DeleteCourseTask extends AsyncTask<Payload, String, Payload> {
         Course course = (Course) payload.getData().get(0);
 
         DbHelper db = DbHelper.getInstance(ctx);
-        db.deleteCourse(course.getCourseId());
+        try{
+            db.deleteCourse(course.getCourseId());
+        }catch (Exception e) {
+            payload.setResult(false);
+            return payload;
+        }
 
         // remove files
         String courseLocation = course.getLocation();
