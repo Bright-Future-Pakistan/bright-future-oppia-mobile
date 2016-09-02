@@ -140,13 +140,21 @@ public class UpgradeManagerTask extends AsyncTask<Payload, String, Payload> {
 			publishProgress(this.ctx.getString(R.string.info_upgrading,"v54a"));
 			payload.setResult(true);
 		}
+
+
+        if(!prefs.getBoolean("upgradeV59",false)){
+            upgradeV59();
+            prefs.edit().putBoolean("upgradeV59", true).apply();
+            publishProgress(this.ctx.getString(R.string.info_upgrading,"v59"));
+            payload.setResult(true);
+        }
 		
 		return payload;
 	}
-	
-	/* rescans all the installed courses and reinstalls them, to ensure that 
-	 * the new titles etc are picked up
-	 */
+
+    /* rescans all the installed courses and reinstalls them, to ensure that
+     * the new titles etc are picked up
+     */
 	protected void upgradeV17(){
 		File dir = new File(Storage.getCoursesPath(ctx));
 		String[] children = dir.list();
@@ -442,6 +450,21 @@ public class UpgradeManagerTask extends AsyncTask<Payload, String, Payload> {
 		db.updateUserPoints(userId, points);
 		db.updateUserBadges(userId, badges);
 	}
+
+    /*
+        Checks if the server preference is the IP address hard-coded, in that
+        case updates it to the domain name one
+     */
+    private void upgradeV59() {
+        //The previous default BrightFuture server (without domain name)
+        String prevDefaultServer = "http://52.17.123.50/";
+
+        String currentServer = prefs.getString(PrefsActivity.PREF_SERVER, "");
+        if (prevDefaultServer.equals(currentServer)){
+            prefs.edit().putString(PrefsActivity.PREF_SERVER, ctx.getString(R.string.prefServerDefault)).apply();
+        }
+        Log.d(TAG, "Updated server preference with domain named one");
+    }
 	
 	@Override
 	protected void onProgressUpdate(String... obj) {
