@@ -68,8 +68,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
-
-    apply plugin: 'com.google.gms.google-services'
 }
 
 dependencies {
@@ -80,5 +78,7 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     compile 'com.splunk.mint:mint:5.0.0'
-    compile 'com.google.android.gms:play-services-gcm:8.1.0'
+    compile 'com.google.android.gms:play-services-gcm:9.4.0'
 }
+
+apply plugin: 'com.google.gms.google-services'
