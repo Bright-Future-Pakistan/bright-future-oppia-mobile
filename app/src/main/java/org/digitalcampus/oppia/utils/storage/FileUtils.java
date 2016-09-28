@@ -229,7 +229,9 @@ public class FileUtils {
 			return true;
 		} else if (mimeType.equals("video/mp4")) {
 			return true;
-		} else if(mimeType.equals("audio/mpeg")) {
+		} else if (mimeType.equals("video/3gpp") || mimeType.equals("video/3gp")) {
+            return true;
+        } else if(mimeType.equals("audio/mpeg")) {
 			return true;
 		} else {
 			return false;
