@@ -23,7 +23,8 @@ import java.util.Comparator;
 import java.util.Locale;
 
 import org.bright.future.oppia.mobile.learning.R;
-import org.bright.future.oppia.activity.PrefsActivity;
+
+import org.digitalcampus.oppia.activity.PrefsActivity;
 import org.digitalcampus.oppia.listener.ListInnerBtnOnClickListener;
 import org.digitalcampus.oppia.model.Course;
 import org.digitalcampus.oppia.model.Media;
