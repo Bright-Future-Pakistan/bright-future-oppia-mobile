@@ -24,7 +24,7 @@ import org.digitalcampus.oppia.adapter.PointsListAdapter;
 import org.digitalcampus.oppia.application.MobileLearning;
 import org.digitalcampus.oppia.listener.APIRequestListener;
 import org.digitalcampus.oppia.model.Points;
-import org.digitalcampus.oppia.task.APIRequestTask;
+import org.digitalcampus.oppia.task.APIUserRequestTask;
 import org.digitalcampus.oppia.task.Payload;
 import org.digitalcampus.oppia.utils.UIUtils;
 import org.json.JSONException;
@@ -41,12 +41,14 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import javax.inject.Inject;
+
 public class PointsFragment extends AppFragment implements APIRequestListener {
 
 	public static final String TAG = PointsFragment.class.getSimpleName();
 
     private JSONObject json;
-    private ArrayList<Points> points;
+    @Inject ArrayList<Points> points;
 	private PointsListAdapter pointsAdapter;
 
 	public static PointsFragment newInstance() {
@@ -71,16 +73,21 @@ public class PointsFragment extends AppFragment implements APIRequestListener {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
+		initializeDagger();
 
-        points = new ArrayList<Points>();
         pointsAdapter = new PointsListAdapter(super.getActivity(), points);
         ListView listView = (ListView) getView().findViewById(R.id.points_list);
         listView.setAdapter(pointsAdapter);
 		getPoints();
 	}
+
+	private void initializeDagger() {
+		MobileLearning app = (MobileLearning) getActivity().getApplication();
+		app.getComponent().inject(this);
+	}
 	
 	private void getPoints(){		
-		APIRequestTask task = new APIRequestTask(super.getActivity());
+		APIUserRequestTask task = new APIUserRequestTask(super.getActivity());
 		Payload p = new Payload(MobileLearning.SERVER_POINTS_PATH);
 		task.setAPIRequestListener(this);
 		task.execute(p);

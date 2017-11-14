@@ -26,15 +26,14 @@ import org.digitalcampus.oppia.application.MobileLearning;
 import org.digitalcampus.oppia.application.SessionManager;
 import org.digitalcampus.oppia.listener.APIRequestListener;
 import org.digitalcampus.oppia.model.QuizAttempt;
-import org.digitalcampus.oppia.task.APIRequestTask;
+import org.digitalcampus.oppia.task.APIUserRequestTask;
 import org.digitalcampus.oppia.task.Payload;
 import org.digitalcampus.oppia.task.SubmitQuizAttemptsTask;
 import org.digitalcampus.oppia.task.SubmitTrackerMultipleTask;
-import org.digitalcampus.oppia.utils.ui.OppiaNotificationBuilder;
+import org.digitalcampus.oppia.utils.ui.OppiaNotificationUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -42,8 +41,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Binder;
@@ -87,7 +84,7 @@ public class TrackerService extends Service implements APIRequestListener {
 			long lastRun = prefs.getLong("lastCourseUpdateCheck", 0);
 			long now = System.currentTimeMillis()/1000;
 			if((lastRun + (3600*12)) < now){
-				APIRequestTask task = new APIRequestTask(this);
+				APIUserRequestTask task = new APIUserRequestTask(this);
 				p = new Payload(MobileLearning.SERVER_COURSES_PATH);
 				task.setAPIRequestListener(this);
 				task.execute(p);
@@ -183,15 +180,14 @@ public class TrackerService extends Service implements APIRequestListener {
             Intent resultIntent = new Intent(this, DownloadActivity.class);
             PendingIntent resultPendingIntent = PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-            NotificationCompat.Builder mBuilder = OppiaNotificationBuilder.getBaseBuilder(this, true);
-            mBuilder
-                .setContentTitle(getString(R.string.notification_course_update_title))
-                .setContentText(getString(R.string.notification_course_update_text))
-			    .setContentIntent(resultPendingIntent);
+            NotificationCompat.Builder mBuilder = OppiaNotificationUtils.getBaseBuilder(this, true);
+			mBuilder
+					.setContentTitle(getString(R.string.notification_course_update_title))
+					.setContentText(getString(R.string.notification_course_update_text))
+					.setContentIntent(resultPendingIntent);
 			int mId = 001;
 
-            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.notify(mId, mBuilder.build());
+			OppiaNotificationUtils.sendNotification(this, mId, mBuilder.build());
 		}
 	}
 

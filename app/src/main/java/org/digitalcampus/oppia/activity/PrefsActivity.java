@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.bright.future.oppia.mobile.learning.BuildConfig;
 import org.bright.future.oppia.mobile.learning.R;
 import org.digitalcampus.oppia.application.AdminReceiver;
 import org.digitalcampus.oppia.fragments.PreferencesFragment;
@@ -96,6 +97,7 @@ public class PrefsActivity extends AppActivity implements SharedPreferences.OnSh
 	public static final String PREF_LOGOUT_ENABLED = "prefLogoutEnabled";
 	public static final String PREF_DELETE_COURSE_ENABLED = "prefDeleteCourseEnabled";
 	public static final String PREF_DOWNLOAD_VIA_CELLULAR_ENABLED = "prefDownloadViaCellularEnabled";
+    public static final String PREF_DISABLE_NOTIFICATIONS = "prefDisableNotifications";
 
     public static final String PREF_STORAGE_OPTION = "prefStorageOption";
     public static final String STORAGE_OPTION_INTERNAL = "internal";
@@ -156,7 +158,16 @@ public class PrefsActivity extends AppActivity implements SharedPreferences.OnSh
 
     public void onSharedPreferenceChanged(final SharedPreferences sharedPreferences, String key) {
         Log.d(TAG, "Preference changed: " + key);
-        if (key.equalsIgnoreCase(PREF_STORAGE_OPTION)) {
+
+        if(key.equalsIgnoreCase(PrefsActivity.PREF_SERVER)){
+            String newServerURL = sharedPreferences.getString(PrefsActivity.PREF_SERVER, "");
+            if(!newServerURL.endsWith("/")){
+                newServerURL = newServerURL.trim()+"/";
+                sharedPreferences.edit().putString(PrefsActivity.PREF_SERVER, newServerURL).apply();
+            }
+            mPrefsFragment.updateServerPref(newServerURL);
+        }
+        else if (key.equalsIgnoreCase(PREF_STORAGE_OPTION)) {
             String currentLocation = sharedPreferences.getString(PrefsActivity.PREF_STORAGE_LOCATION, "");
             String storageOption   = sharedPreferences.getString(PrefsActivity.PREF_STORAGE_OPTION, "");
             String path = null;
@@ -251,17 +262,18 @@ public class PrefsActivity extends AppActivity implements SharedPreferences.OnSh
             }
         }
         else if (key.equalsIgnoreCase(PREF_REMOTE_ADMIN)){
-            boolean adminEnabled = sharedPreferences.getBoolean(PrefsActivity.PREF_REMOTE_ADMIN, false);
-            ComponentName adminReceiver = new ComponentName(this, AdminReceiver.class);
-            if (adminEnabled){
-                // Activate device administration
-                Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
-                intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, adminReceiver);
-                startActivityForResult(intent, ADMIN_ACTIVATION_REQUEST);
-            }
-            else{
-                DevicePolicyManager dpm = (DevicePolicyManager) this.getSystemService(Context.DEVICE_POLICY_SERVICE);
-                dpm.removeActiveAdmin(adminReceiver);
+            if (BuildConfig.FLAVOR.equals("admin")) {
+                boolean adminEnabled = sharedPreferences.getBoolean(PrefsActivity.PREF_REMOTE_ADMIN, false);
+                ComponentName adminReceiver = new ComponentName(this, AdminReceiver.class);
+                if (adminEnabled) {
+                    // Activate device administration
+                    Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+                    intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, adminReceiver);
+                    startActivityForResult(intent, ADMIN_ACTIVATION_REQUEST);
+                } else {
+                    DevicePolicyManager dpm = (DevicePolicyManager) this.getSystemService(Context.DEVICE_POLICY_SERVICE);
+                    dpm.removeActiveAdmin(adminReceiver);
+                }
             }
         }
     }

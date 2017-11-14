@@ -58,7 +58,8 @@ public class ScanMediaTask extends AsyncTask<Payload, String, Payload>{
 			CourseXMLReader cxr;
 			try {
 				cxr = new CourseXMLReader(course.getCourseXMLLocation(), course.getCourseId(), ctx);
-				ArrayList<Media> media = cxr.getMedia();
+                cxr.parse(CourseXMLReader.ParseMode.ONLY_MEDIA);
+				ArrayList<Media> media = cxr.getMediaResponses().getCourseMedia();
 
 				for(Media m: media){
 					publishProgress(m.getFilename());
@@ -70,8 +71,10 @@ public class ScanMediaTask extends AsyncTask<Payload, String, Payload>{
 						for (Object cm: currentMedia){
                             //We have to add it if there is not other object with that filename
 							add = !((Media) cm).getFilename().equals(m.getFilename());
+							if(!add){ ((Media) cm).getCourses().add(course); break; }
 						}
 						if (add){
+							m.getCourses().add(course);
                             if (downloadingMedia!=null && downloadingMedia.contains(m.getDownloadUrl())){
                                 m.setDownloading(true);
                             }
